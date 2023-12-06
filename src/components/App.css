@@ -1,0 +1,58 @@
+/* Header.js */
+
+.header h2 {
+  padding-top: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* Add Contact js */
+
+.contactInputBox {
+  margin: auto;
+  width: 50%;
+  height: 400px;
+ background: linear-gradient(145deg,rgb(7, 145, 2),rgb(222, 197, 5));
+  margin-top: 2rem;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.contactInputBox h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+ 
+}
+
+.inputField input{
+  width: 70%;
+  height: 50px;
+  margin-top: 2rem;
+  text-align: center;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+::placeholder{
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.addButton{
+  margin-top: 2rem;
+  width: 150px;
+  height: 40px;
+  color: #fff;
+  background-color: #ac071a;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  transition: .3s ease-in-out;
+}
+.addButton:hover{
+  background-color: #e90822;
+  scale: 1.1;
+}
+
