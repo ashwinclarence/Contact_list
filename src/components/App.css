@@ -1,3 +1,21 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 
+body{
+  background:linear-gradient(120deg,rgb(41, 0, 128),rgb(255, 0, 221));
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
+/* app .js */
+
+.mainbox{
+  height: 100vh;
+}
+
 /* Header.js */
 
 .header h2 {
@@ -56,3 +74,34 @@
   scale: 1.1;
 }
 
+/* contact card */
+.item {
+  margin: auto;
+  width: 60%;
+  margin-top: 1rem;
+  background: linear-gradient(180deg,#d4d4d4,#9a9a9a);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: .3s ease-in-out;
+  
+}
+.item:hover{
+  scale: 1.04;
+}
+.nameHeader{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.nameHeader i{
+  scale: 1.9;
+  padding: .3rem;
+  border-radius: 50%;
+  color: rgb(141, 3, 3);
+}
+.nameHeader img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+}

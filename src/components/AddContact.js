@@ -1,17 +1,31 @@
-import React from 'react'
+import React from "react";
 
-function AddContact() {
-  return (
-    <div className='contactInputBox text-center'>
+class AddContact extends React.Component{
+  state={
+    name:"",
+    email:"",
+  };
+  add=(e)=>{
+    e.preventDefault();
+    if(this.state.name==="" || this.state.email===""){
+      alert("all the fields are mandatory")
+      return
+    }
+    this.props.AddContactHandler(this.state);
+    this.setState({name:"",email:""})
+  };
+  render(){
+    return(
+      <div className='contactInputBox text-center'>
       <h2>Add Contact</h2>
-      <form action="" className='row'>
+      <form action="" className='row' onSubmit={this.add}>
         <div className="inputField col-md-12">
            
-            <input type="text" name='name' placeholder='Enter name' required/>
+            <input value={this.state.name} onChange={(e)=>this.setState({name:e.target.value})} type="text" name='name' placeholder='Enter name' required autoComplete="off"/>
         </div>
         <div className="inputField col-md-12">
             
-            <input type="email" name='name' placeholder='Enter email' required/>
+            <input value={this.state.email} onChange={(e)=>this.setState({email:e.target.value})} type="email" name='name' placeholder='Enter email' required autoComplete="off"/>
         </div>
         <div className="inputField col-md-12">
             
@@ -20,7 +34,7 @@ function AddContact() {
         
       </form>
     </div>
-  )
+    )
+  }
 }
-
-export default AddContact
+export default AddContact;
