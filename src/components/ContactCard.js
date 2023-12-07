@@ -8,7 +8,7 @@ function ContactCard(props) {
           <div className="nameHeader col-md-2"><img src={profile} alt="profile" /></div>
           <div className="nameHeader col-md-4">{name}</div>
           <div className="nameHeader col-md-5">{email}</div>
-          <div className="nameHeader col-md-1"><i class="fa-solid fa-trash-can"></i></div>
+          <div className="nameHeader col-md-1"><i class="fa-solid fa-trash-can" onClick={()=>props.clickHandler(id)}></i></div>
           
         </div>
       </div>
