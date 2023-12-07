@@ -3,12 +3,13 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* 
+
 body{
-  background:linear-gradient(120deg,rgb(41, 0, 128),rgb(255, 0, 221));
+ background-image: url("../images/bg.PNG");
+ background-color: rgba(255, 0, 0, 0.548);
   background-size: cover;
   background-repeat: no-repeat;
-} */
+}
 
 /* app .js */
 
@@ -30,7 +31,7 @@ body{
   margin: auto;
   width: 50%;
   height: 400px;
- background: linear-gradient(145deg,rgb(7, 145, 2),rgb(222, 197, 5));
+ background: linear-gradient(145deg,rgb(146, 145, 145),rgb(104, 104, 104));
   margin-top: 2rem;
   overflow: hidden;
   padding: 2rem;
