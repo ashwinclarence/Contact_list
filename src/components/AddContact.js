@@ -1,40 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-class AddContact extends React.Component{
-  state={
-    name:"",
-    email:"",
-  };
-  add=(e)=>{
+const AddContact = ({ AddContactHandler }) => {
+  const navigate = useNavigate();
+
+  const [contact, setContact] = useState({ name: "", email: "" });
+
+  const add = (e) => {
     e.preventDefault();
-    if(this.state.name==="" || this.state.email===""){
-      alert("all the fields are mandatory")
-      return
+    if (contact.name === "" || contact.email === "") {
+      alert("All the fields are mandatory");
+      return;
     }
-    this.props.AddContactHandler(this.state);
-    this.setState({name:"",email:""})
+    AddContactHandler(contact);
+    setContact({ name: "", email: "" });
+    navigate("/");
   };
-  render(){
-    return(
-      <div className='contactInputBox text-center'>
+
+  return (
+    <div className='contactInputBox text-center'>
       <h2>Add Contact</h2>
-      <form action="" className='row' onSubmit={this.add}>
+      <form className='row' onSubmit={add}>
         <div className="inputField col-md-12">
-           
-            <input value={this.state.name} onChange={(e)=>this.setState({name:e.target.value})} type="text" name='name' placeholder='Enter name' required autoComplete="off"/>
+          <input
+            value={contact.name}
+            onChange={(e) => setContact({ ...contact, name: e.target.value })}
+            type="text"
+            name='name'
+            placeholder='Enter name'
+            required
+            autoComplete="off"
+          />
         </div>
         <div className="inputField col-md-12">
-            
-            <input value={this.state.email} onChange={(e)=>this.setState({email:e.target.value})} type="email" name='name' placeholder='Enter email' required autoComplete="off"/>
+          <input
+            value={contact.email}
+            onChange={(e) => setContact({ ...contact, email: e.target.value })}
+            type="email"
+            name='email'
+            placeholder='Enter email'
+            required
+            autoComplete="off"
+          />
         </div>
         <div className="inputField col-md-12">
-            
-        <button className='addButton '>Add</button>
+          <button className='addButton'>Add</button>
         </div>
-        
       </form>
+      <Link to='/'>
+        <button className="view-contact-list">View Contact</button>
+      </Link>
     </div>
-    )
-  }
-}
+  );
+};
+
 export default AddContact;

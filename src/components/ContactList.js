@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactCard from './ContactCard'
+import {Link} from 'react-router-dom'
 
 function ContactList(props) {
   const deleteContactHandler=(id)=>{
@@ -12,6 +13,10 @@ function ContactList(props) {
   })
   return (
     <div className='contactListBox'>
+      <h2>Contact List</h2>
+      <Link to={'/add'}>
+      <button className='add-contact'>Add Contact</button>
+      </Link>
       {renderContactList}
     </div>
   )
